@@ -51,12 +51,13 @@ class App extends React.Component {
 		this.init();
 	}
 
+	//read data from the csv dataset
 	async init() {
 		let data = await d3.csv(`${process.env.PUBLIC_URL}/sachin.csv`);
-		// data = data.slice(0, 200)
 		this.setState({ data }, _ => this.displayGraph());
 	}
 
+	//displaying graph
 	displayGraph() {
 		let dataset = this.state.data;
 
@@ -64,12 +65,6 @@ class App extends React.Component {
 			dataset = dataset.filter(data => data['opposition'].slice(2) === this.state.team_name);
 
 		this.setState({ filtered_data: dataset });
-
-		// dataset = dataset.map(data => {
-		// 		data['batting_score'] = (parseInt(data['batting_score'])) || NaN
-		// 		data['wickets'] = (parseInt(data['wickets'])) || NaN
-		// 		return data;
-		// 	});
 
 		const padding = 50;
 		const width = 780;
@@ -88,6 +83,7 @@ class App extends React.Component {
 		const xAxis = d3.axisBottom(xScale);
 		const yAxis = d3.axisLeft(yScale);
 
+		//removing existing svg element for the next UI rendering
 		d3.select('svg').remove();
 		d3.select('section').remove();
 
@@ -115,6 +111,7 @@ class App extends React.Component {
 			})
 			.attr('class', 'animated fadeInUp');
 
+		//creating x-axis
 		svg.append('g')
 			.attr('transform', `translate(0, ${height - padding})`)
 			.call(xAxis);
@@ -124,6 +121,7 @@ class App extends React.Component {
 			.style('text-anchor', 'middle')
 			.text('Innings ->');
 
+		//creating y-axis
 		svg.append('g')
 			.attr('transform', `translate(${padding}, 0)`)
 			.call(yAxis);
@@ -148,9 +146,7 @@ class App extends React.Component {
 			.data(colors)
 			.enter()
 			.append('div')
-			// .style('width', '3em')
 			.style('background-color', d => d.color)
-			// .style('color', 'white')
 			.attr('class', 'color-label')
 			.text(d => d.label);
 
