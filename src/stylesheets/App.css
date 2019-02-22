@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite|Courgette');
+
+html, body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Special Elite', cursive;
+}
+
+#root {
+	text-align: center;
+}
+
+.match-style label {
+	margin: 1em;
+}
+
+.color-label {
+	display: inline-block;
+	margin: 1em 2em;
+	width: 5em;
+	color: white;
+}
+
+h2 {
+	margin: 2em 0 1em 0;
+}
+
+h6 {
+	margin-bottom: 2em;
+}
+
+p {
+	text-align: justify;
+}
+
+footer {
+	height: 20em;
+	padding: 2em 0;
+	background: radial-gradient(#303030, #262626);
+	color: #f4f5f4;
+}
+
+footer q {
+	font-size: 2em;
+	font-family: 'Courgette', cursive;
+	color: coral;
+}
+
+footer > * {
+	text-align: center;
+}
