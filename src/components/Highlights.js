@@ -30,25 +30,30 @@ const calculateInsights = dataset => {
 
 const Highlights = props => {
 	const highlights = calculateInsights(props.dataset);
-	return (
-		<Container>
-			<Row>
-				<Col>
-					<h2>Highlights</h2>
-				</Col>
-			</Row>
-			<Row>
-				{Object.keys(highlights).map(key => {
-					return (
-						<Col xs={12} md={6} lg={4} key={key}>
-							<h4>{key}</h4>
-							<h6>{highlights[key]}</h6>
-						</Col>
-					);
-				})}
-			</Row>
-		</Container>
-	);
+	if(window.innerWidth >= 795)
+		return (
+			<Container>
+				<Row>
+					<Col>
+						<h2>Highlights</h2>
+					</Col>
+				</Row>
+				<Row>
+					{Object.keys(highlights).map(key => {
+						return (
+							<Col xs={12} md={6} lg={4} key={key}>
+								<h4>{key}</h4>
+								<h6>{highlights[key]}</h6>
+							</Col>
+						);
+					})}
+				</Row>
+			</Container>
+		);
+	else
+		return(
+			<div>Can't display for smaller viewports</div>
+		);
 };
 
 export default Highlights;
