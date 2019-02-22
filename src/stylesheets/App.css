@@ -55,3 +55,9 @@ footer q {
 footer > * {
 	text-align: center;
 }
+
+@media only screen and (max-width: 500px) {
+	footer q {
+		font-size: 1.5em;
+	}
+}
