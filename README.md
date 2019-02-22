@@ -18,6 +18,11 @@ Open up the browser and navigate to `localhost:3000`; you should now see the app
 
 ## Live Link
 
-The project has been hosted on **Netlify** which you can check [here][1]
+The project has been hosted on **Netlify** which you can check [here][1]!
+
+## License
+
+The MIT License 2019 - [Priyabrata Biswas][2].
 
 [1]: https://sachin-tendulkar.netlify.com
+[2]: https://github.com/pbiswas101
